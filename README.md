@@ -1,2 +1,2 @@
 # cmp_terraform
-CMP Terraform Codes Repository
+ePLDT CMP Terraform Codes Repository
