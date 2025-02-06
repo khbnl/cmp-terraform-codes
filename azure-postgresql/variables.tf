@@ -4,10 +4,24 @@ variable "location" {
   default     = "southeastasia"
 }
 
+variable "create_new_resource_group" {
+  description = "Flag to indicate whether to create a new resource group."
+  type        = bool
+  default     = false
+}
+
 variable "resource_group_name" {
   type        = string
-  description = "Name of the resource group where the PostgreSQL server will be created."
-  default     = "rg-postgres"
+  description = "Name of the resource group where the storage account will be created."
+  default = null
+
+}
+
+variable "existing_resource_group_name" {
+  type        = string
+  description = "Name of the existing resource group where the storage account will be created."
+  default = null
+
 }
 
 variable "server_name" {
