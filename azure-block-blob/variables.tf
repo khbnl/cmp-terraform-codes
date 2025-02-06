@@ -1,16 +1,19 @@
 variable "azure_subscription_id" {
   type        = string
   description = "Azure subscription ID to use."
+  sensitive   = true
 }
 
 variable "azure_tenant_id" {
   type        = string
   description = "Azure tenant ID to use."
+  sensitive   = true
 }
 
 variable "azure_client_id" {
   type        = string
   description = "Azure client ID to use."
+  sensitive   = true
 }
 
 variable "azure_client_secret" {
