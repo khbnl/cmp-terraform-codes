@@ -12,7 +12,7 @@ resource "azurerm_resource_group" "rg" {
 # PostgreSQL Flexible Server
 resource "azurerm_postgresql_flexible_server" "postgres" {
   name                = var.server_name
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = var.create_new_resource_group ? azurerm_resource_group.rg[0].name : data.azurerm_resource_group.rg[0].name
   location            = var.location
 
   version                       = var.postgresql_version
