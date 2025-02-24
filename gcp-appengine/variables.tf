@@ -3,8 +3,8 @@ variable "project_id" {
   type        = string
 }
 
-variable "project" {
-  description = "The ID of the Google Cloud project."
+variable "project_name" {
+  description = "Name of the Google Cloud project."
   type        = string
 }
 variable "location" {
@@ -14,11 +14,13 @@ variable "location" {
 }
 
 variable "gcp_private_key" { 
-  type = string 
+  type = string
+  sensitive = true
 } 
 
 variable "gcp_cred" { 
   type = map 
+  sensitive = true
 } 
 
 locals {
