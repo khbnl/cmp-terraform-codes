@@ -23,7 +23,7 @@ resource "google_sql_database_instance" "cloudsql_instance" {
     }
   }
 
-  depends_on = [google_project_service.cloudsql_api]
+ # depends_on = [google_project_service.cloudsql_api]
 }
 
 resource "google_sql_database" "cloudsql_db" {
