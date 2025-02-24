@@ -10,7 +10,7 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("sa-key.json")
   project     = var.project_id
   region      = var.location
+  credentials = jsonencode(local.credential)
 }
