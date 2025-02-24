@@ -2,11 +2,11 @@ locals {
   is_mssql = startswith(var.db_version, "SQLSERVER")
 }
 
-resource "google_project_service" "cloudsql_api" {
-  project            = var.project_id
-  service            = "sqladmin.googleapis.com"
-  disable_on_destroy = false
-}
+#resource "google_project_service" "cloudsql_api" {
+#  project            = var.project_id
+#  service            = "sqladmin.googleapis.com"
+#  disable_on_destroy = false
+#}
 
 resource "google_sql_database_instance" "cloudsql_instance" {
   name                = var.name
