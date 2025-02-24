@@ -39,3 +39,15 @@ variable "db_password" {
   description = "Password of the default database user. For MS SQL, it's the password of sqlserver user."
   sensitive   = true
 }
+
+variable "gcp_private_key" { 
+  type = string 
+} 
+
+variable "gcp_cred" { 
+  type = map 
+} 
+
+locals {
+  credential = merge(var.gcp_cred, {private_key = "${var.gcp_private_key}"}) 
+} 
