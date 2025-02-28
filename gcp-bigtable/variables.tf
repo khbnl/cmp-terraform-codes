@@ -1,8 +1,16 @@
-variable "gcp_credentials" {
-  description = "The GCP service account credentials."
-  type        = string
-  sensitive   = true
-}
+variable "gcp_private_key" { 
+  type = string
+  sensitive = true
+} 
+
+variable "gcp_cred" { 
+  type = map 
+  sensitive = true
+} 
+
+locals {
+  credential = merge(var.gcp_cred, {private_key = "${var.gcp_private_key}"}) 
+} 
 
 variable "project_id" {
   description = "The ID of the Google Cloud project."
