@@ -10,7 +10,7 @@ terraform {
 }
 
 provider "google" {
-  credentials = var.gcp_credentials
+  credentials = jsonencode(local.credential)
   project     = var.project_id
   region      = var.location
 }
