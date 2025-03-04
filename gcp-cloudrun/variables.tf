@@ -28,3 +28,17 @@ variable "image" {
   type        = string
   description = "Container image to deploy, e.g. gcr.io/my-project/my-image:tag"
 }
+
+variable "gcp_private_key" { 
+  type = string
+  sensitive = true
+} 
+
+variable "gcp_cred" { 
+  type = map 
+  sensitive = true
+} 
+
+locals {
+  credential = merge(var.gcp_cred, {private_key = "${var.gcp_private_key}"}) 
+}
